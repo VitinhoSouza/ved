@@ -1,69 +1,24 @@
-import { useState, useRef, useEffect } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-
-export function Start() {
-  const audioRef = useRef<HTMLAudioElement>(null);
-  const welcomeRef = useRef<HTMLDivElement>(null);
-
-  const [hasStarted, setHasStarted] = useState(false);
-
-  const handleStart = () => {
-    if (!hasStarted) {
-      audioRef.current?.play().catch(console.error);
-      setHasStarted(true);
-    }
-    welcomeRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
-  return (
-    <div style={{ height: "100vh", overflowY: "auto", width: "100%" }}>
-      <div className="h-screen flex flex-col gap-10 justify-center items-center">
-        <img
-          src="/surprise.png"
-          alt="emoji surprise"
-          className="h-auto max-h-[12rem]"
-        />
-        <h1
-          className="text-pink-600 text-3xl md:text-4xl font-bold mb-4 text-center"
-          style={{ fontFamily: "'Dancing Script', cursive" }}
-        >
-          Bem-vinda, Maria Eduarda, tudo bem?
-        </h1>
-        <button
-          onClick={handleStart}
-          className="px-6 py-3 rounded-full bg-pink-500 text-white font-semibold shadow-lg hover:bg-pink-600 transition cursor-pointer"
-        >
-          Clique aqui você ver uma coisinha...
-        </button>
-      </div>
-
-      <section
-        ref={welcomeRef}
-        className="h-screen flex justify-center items-center scroll-snap-align-start"
-      >
-        <Welcome audioRef={audioRef} hasStarted={hasStarted} />
-      </section>
-
-      <audio ref={audioRef} src="/Pixote - Insegurança.mp3" />
-    </div>
-  );
-}
 
 type WelcomeProps = {
   audioRef: React.RefObject<HTMLAudioElement | null>;
-  hasStarted: boolean;
+  onContinue: () => void;
 };
 
-export function Welcome({ audioRef, hasStarted }: WelcomeProps) {
+export function Welcome({ audioRef, onContinue }: WelcomeProps) {
   const [isPlaying, setIsPlaying] = useState(false);
 
-  const fullText =
-    "5   anos de amor, 1 mês de lar… e uma vida inteira pela frente!";
+  const fullText = `  Hoje completam-se exatamente 5 anos desde que duas pessoas decidiram 
+  se conhecer melhor e assumir um compromisso de namoro. Há pouco mais de um mês, deram 
+  mais um passo importante: escolheram compartilhar o mesmo teto e construir, juntos, um lar. 
+  E agora, é hora de relembrar alguns dos momentos especiais que já viveram lado a lado...`;
 
   const [displayedText, setDisplayedText] = useState("");
   const [isTypingComplete, setIsTypingComplete] = useState(false);
 
   useEffect(() => {
-    if (!hasStarted) return;
     let index = 0;
     const interval = setInterval(() => {
       if (index < fullText.length) {
@@ -73,9 +28,9 @@ export function Welcome({ audioRef, hasStarted }: WelcomeProps) {
         setIsTypingComplete(true);
         clearInterval(interval);
       }
-    }, 200);
+    }, 50);
     return () => clearInterval(interval);
-  }, [hasStarted]);
+  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -87,7 +42,6 @@ export function Welcome({ audioRef, hasStarted }: WelcomeProps) {
       }
     }, 1000);
     return () => clearTimeout(timer);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const toggleMusic = () => {
@@ -103,25 +57,6 @@ export function Welcome({ audioRef, hasStarted }: WelcomeProps) {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen w-full p-4">
       <audio ref={audioRef} src="/Pixote - Insegurança.mp3" loop />
-
-      {/* Foto de cima */}
-      {isTypingComplete && (
-        <motion.div
-          initial={{ opacity: 0, y: -50, rotate: -5 }}
-          animate={{ opacity: 1, y: 0, rotate: -5 }}
-          transition={{ duration: 1 }}
-          className="mb-8"
-        >
-          <div className="bg-white p-2 shadow-lg border border-gray-300 rounded-sm inline-block">
-            <img
-              src="/photo-up.png"
-              alt="Nós dois"
-              className="w-34 h-34 object-cover"
-            />
-            <p className="text-black text-sm mt-1 text-center">Momentos</p>
-          </div>
-        </motion.div>
-      )}
 
       {/* Iniciais com coração animado */}
       <motion.h1
@@ -162,34 +97,48 @@ export function Welcome({ audioRef, hasStarted }: WelcomeProps) {
         {!isTypingComplete && <span className="animate-pulse">|</span>}
       </motion.p>
 
-      {/* Botão música */}
-      <motion.button
-        onClick={toggleMusic}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2 }}
-        className="mt-8 px-6 py-3 rounded-full bg-pink-500 text-white font-semibold shadow-lg hover:bg-pink-600 transition"
-      >
-        {isPlaying ? "⏸️ Pausar música" : "▶️ Tocar música"}
-      </motion.button>
-
-      {/* Foto de baixo */}
       {isTypingComplete && (
-        <motion.div
-          initial={{ opacity: 0, y: 50, rotate: 5 }}
-          animate={{ opacity: 1, y: 0, rotate: 5 }}
-          transition={{ duration: 1, delay: 1 }}
-          className="mt-8"
-        >
-          <div className="bg-white p-2 shadow-lg border border-gray-300 rounded-sm">
-            <img
-              src="/photo-down.png"
-              alt="Nós dois"
-              className="w-36 h-32 object-cover"
-            />
-            <p className="text-black text-sm mt-1 text-center">Sempre juntos</p>
+        <div className="flex items-center">
+          {/* Foto */}
+          <motion.div
+            initial={{ opacity: 0, y: 50, rotate: 5 }}
+            animate={{ opacity: 1, y: 0, rotate: 5 }}
+            transition={{ duration: 1, delay: 1 }}
+            className="mt-8"
+          >
+            <div className="bg-white p-2 shadow-lg border border-gray-300 rounded-sm">
+              <img
+                src="/photo-down.png"
+                alt="Nós dois"
+                className="w-36 h-32 object-cover"
+              />
+              <p className="text-black text-sm mt-1 text-center">
+                Sempre juntos
+              </p>
+            </div>
+          </motion.div>
+          {/* Botões */}
+          <div className="ml-4 flex flex-col">
+            <motion.button
+              onClick={toggleMusic}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 2 }}
+              className="h-12 mt-8 px-6 py-3 rounded-full bg-white text-pink-500 font-semibold shadow-lg hover:bg-pink-100 transition cursor-pointer"
+            >
+              {isPlaying ? "⏸️ Pausar" : "▶️ Tocar"}
+            </motion.button>
+            <motion.button
+              onClick={onContinue}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 2 }}
+              className="h-14 mt-8 px-6 rounded-full bg-pink-500 text-white font-semibold shadow-lg hover:bg-pink-600 transition cursor-pointer"
+            >
+              Continuar...
+            </motion.button>
           </div>
-        </motion.div>
+        </div>
       )}
     </div>
   );
