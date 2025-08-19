@@ -56,7 +56,7 @@ export function Welcome({ audioRef, onContinue }: WelcomeProps) {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen w-full p-4">
-      <audio ref={audioRef} src="/Pixote - Insegurança.mp3" loop />
+      <audio ref={audioRef} src="/Ferrugem-PirataETesouro.mp3" loop />
 
       {/* Iniciais com coração animado */}
       <motion.h1
@@ -106,14 +106,21 @@ export function Welcome({ audioRef, onContinue }: WelcomeProps) {
             transition={{ duration: 1, delay: 1 }}
             className="mt-8"
           >
-            <div className="bg-white p-2 shadow-lg border border-gray-300 rounded-sm">
+            <div className="bg-white p-3 shadow-xl border border-pink-200 rounded-xl">
               <img
-                src="/timeline/role-aleatorio.JPG"
+                src="/timeline/viagem-canoa-quadriciclo.jpg"
                 alt="Nós dois"
-                className="w-36 h-32 object-cover"
+                className="w-40 h-36 object-cover rounded-lg shadow-md"
               />
-              <p className="text-black text-sm mt-1 text-center">
-                Sempre juntos
+
+              {/* Data */}
+              <p className="text-pink-500 text-md mt-2 font-medium tracking-wide text-center">
+                5 anos
+              </p>
+
+              {/* Título em destaque */}
+              <p className="text-pink-600 text-lg font-bold text-center">
+                Bodas de Paixão 💘
               </p>
             </div>
           </motion.div>

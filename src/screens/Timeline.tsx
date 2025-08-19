@@ -16,17 +16,28 @@ const timelineData: TimelineItem[] = [
     images: ["/timeline/primeiro-beijo.jpg"],
   },
   {
+    date: "",
+    title: "Nosso início...",
+    description:
+      "No começo, nossa situação era difícil, pois se víamos pouco e se falávamos mais por celular, tanto por causa da distância como pelo fato de eu não possuir transporte. Quando se víamos, nossa opção era ficar em casa, assistindo série ou fazendo o tempo passar de outra forma.",
+    images: [
+      "/timeline/inicio.jpg",
+      "/timeline/inicio-2.jpg",
+      "/timeline/inicio-3.jpg",
+    ],
+  },
+  {
     date: "20/08/2020",
     title: "Pedido de namoro 👩‍❤️‍👨",
     description:
-      "Aquele dia em que eu, envergonhado, pedi a seus pais para namorar com você.",
+      "Aquele dia em que eu, envergonhado, visitei sua casa pela primeira vez e pedi a seus pais para namorar com você.",
     images: ["/timeline/pedido-namoro.JPG"],
   },
   {
     date: "26/03/2021",
     title: "Seus 1️⃣7️⃣ anos 🎉",
     description:
-      "O dia que eu te 'enganei' falando que não iria poder ir, mas que fiz o esforço de ir e participar desses momentos importantes para você.",
+      "O dia que eu te 'enganei' falando que não iria poder ir, mas fiz o esforço de ir e participar desse momento muito importante para você.",
     images: ["/timeline/17-anos.jpg"],
   },
   {
@@ -38,7 +49,7 @@ const timelineData: TimelineItem[] = [
   },
   {
     date: "13/08/2021",
-    title: "Primeira viagem juntos para Piauí 🛣️",
+    title: "Primeira viagem juntos 🛣️",
     description:
       "Nossa primeira viagem juntos para Piauí. Dias especiais, cheios de carinho, risadas e novas histórias que ficaram guardadas na memória.",
     images: [
@@ -52,6 +63,13 @@ const timelineData: TimelineItem[] = [
     description:
       "Comemoramos 1 ano de namoro do nosso jeito: rindo e virando crianças nos brinquedos do shopping. Um ano de amor, parceria e muita diversão!",
     images: ["/timeline/1-ano.JPG"],
+  },
+  {
+    date: "11/10/2021",
+    title: "Aniversário da Lucinete 🎂",
+    description:
+      "Nesse dia, comemoramos os 50 anos da sua tia Lucinete. Um dia marcante, onde pude conhecer várias pessoas da família e ainda aproveitamos o resto da noite em um 'piseiro' com sua família.",
+    images: ["/timeline/lucinete-50anos.jpg"],
   },
   {
     date: "22/10/2021",
@@ -71,12 +89,19 @@ const timelineData: TimelineItem[] = [
     date: "26/03/2022",
     title: "Seus 1️⃣8️⃣ anos 🎂",
     description:
-      "Uma data marcante, cheia de sorrisos e novas fases. Um aniversário especial para lembrar sempre.",
+      "Uma data marcante, cheia de sorrisos e muitas pessoas queridas. Um aniversário especial para lembrar sempre.",
     images: [
       "/timeline/18-anos-festa.jpg",
       "/timeline/18-anos-praia.JPG",
       "/timeline/18-anos-biquini.jpg",
     ],
+  },
+  {
+    date: "17/04/2022",
+    title: "Aniversário da Victoria 🎂🎈",
+    description:
+      "Nesse dia, comemoramos os 4 anos da Victoria. Um dia muito divertido que podemos aproveitar juntos!",
+    images: ["/timeline/victoria-4anos.jpg"],
   },
   {
     date: "20/08/2022",
@@ -132,7 +157,10 @@ const timelineData: TimelineItem[] = [
     title: "Dia dos namorados no parque 🎢",
     description:
       "Entre frio na barriga e muitas risadas na roda gigante, sentimos medo juntos, mas transformamos tudo em diversão e boas lembranças.",
-    images: ["/timeline/namorados-parque.jpg"],
+    images: [
+      "/timeline/namorados-parque.jpg",
+      "/timeline/namorados-parque-2.jpg",
+    ],
   },
   {
     date: "24/06/2023",
@@ -160,15 +188,22 @@ const timelineData: TimelineItem[] = [
     images: ["/timeline/viagem-piaui-portinho.jpg"],
   },
   {
-    date: "21/08/2023",
-    title: "Primeira viagem de moto juntos 🏍️",
+    date: "19/08/2023",
+    title: "Aniversário da Dafny 🎂🎈",
     description:
-      "Sentindo o vento no rosto, nossa primeira viagem de moto foi pura liberdade e parceria.",
+      "Lembrando da festa de 2 anos da Dafny. Um dia cheio de sorrisos, brincadeiras e momentos que ficaram guardados com carinho.",
+    images: ["/timeline/dafny-2anos.jpg"],
+  },
+  {
+    date: "21/08/2023",
+    title: "Primeira viagem de moto 🏍️",
+    description:
+      "Sentindo o vento no rosto, nossa primeira viagem de moto foi cansativa, mas com muita liberdade e parceria.",
     images: ["/timeline/primeira-viagem-moto.jpg"],
   },
   {
     date: "22/10/2023",
-    title: "Um dia de lazer no La Suite 🍹",
+    title: "Um dia de lazer no La Suite🍹",
     description: "Curtindo um dia no La Suite junto com amigos especiais.",
     images: ["/timeline/meuniver-lasuite.jpg"],
   },
@@ -183,7 +218,7 @@ const timelineData: TimelineItem[] = [
     date: "01/01/2024",
     title: "Réveillon em Paranaíba - PI 🎆",
     description:
-      "Viramos o ano no Piauí, celebrando juntos com muita alegria e energia positiva.",
+      "Viramos o ano no Piauí, celebrando juntos com muita alegria e energia positiva a chegada de 2024.",
     images: ["/timeline/viagem-revellion-2023.png"],
   },
   {
@@ -197,7 +232,7 @@ const timelineData: TimelineItem[] = [
     date: "13/02/2024",
     title: "Conhecendo Taíba 🌊",
     description:
-      "Descobrimos juntos a beleza da Taíba, entre ondas, vento e momentos inesquecíveis.",
+      "Descobri contigo a beleza da Taíba, entre ondas, vento e momentos inesquecíveis.",
     images: ["/timeline/viagem-taiba.jpg"],
   },
   {
@@ -208,10 +243,17 @@ const timelineData: TimelineItem[] = [
     images: ["/timeline/20-anos-saomiguel.jpg"],
   },
   {
+    date: "16/06/2024",
+    title: "Passeio nas Águas Cristalinas 🌊☀️",
+    description:
+      "Um dia de sol, risadas e mergulhos nas águas cristalinas de Cumbuco… momentos simples que se tornam inesquecíveis quando estamos juntos.",
+    images: ["/timeline/aguas-cristalinas.jpg"],
+  },
+  {
     date: "17/08/2024",
     title: "Viagem para Natal - RN 🏖️",
     description:
-      "Exploramos juntos as praias e a cidaede incrível que é Natal, aproveitando cada momento como se fosse único e comemorando nossos 4 anos de namoro.",
+      "Exploramos juntos as praias e a cidade incrível que é Natal, aproveitando cada momento como se fosse único e comemorando nossos 4 anos de namoro.",
     images: [
       "/timeline/viagem-natal-aquario.JPG",
       "/timeline/viagem-natal-pipa.jpg",
@@ -221,7 +263,7 @@ const timelineData: TimelineItem[] = [
     date: "14/11/2024",
     title: "Casal fitness 🏋️‍♂️❤️",
     description:
-      "Aquele dia em que, além de treinar, a gente decidiu eternizar o shape e a zoeira.",
+      "Aquele dia em que, além de treinar, a gente decidiu eternizar o shape e a brincadeira.",
     images: ["/timeline/casal-fitness.jpg"],
   },
   {
@@ -235,7 +277,7 @@ const timelineData: TimelineItem[] = [
     date: "25/12/2024",
     title: "Natal 2024 🎄✨",
     description:
-      "Passamos o Natal juntos no São Miguel, celebrando em família e espalhando amor.",
+      "Passamos mais um Natal juntos, celebrando em família e espalhando amor.",
     images: ["/timeline/natal-2024-saomiguel.jpg"],
   },
   {
@@ -280,8 +322,12 @@ const timelineData: TimelineItem[] = [
     date: "18/07/2025",
     title: "O dia em que começamos a morar juntos 🏡💛",
     description:
-      "Um marco na nossa história, cheio de expectativa, risadas e a certeza de que construiríamos nosso cantinho lado a lado.",
-    images: ["/timeline/arraia-tarcisa-2025.jpg"],
+      "Um marco na nossa história, cheio de expectativa, frio na barriga e a certeza de que construiríamos nosso cantinho lado a lado.",
+    images: [
+      "/timeline/casa-3.jpg",
+      "/timeline/casa-2.jpg",
+      "/timeline/casa.jpg",
+    ],
   },
 ];
 
@@ -299,7 +345,7 @@ export function Timeline() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className={`relative flex flex-col md:flex-row items-start gap-6 ${
+            className={`relative flex flex-col md:flex-row items-center justify-center gap-6 ${
               index % 2 === 0 ? "md:flex-row-reverse" : ""
             }`}
           >
