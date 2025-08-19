@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { Welcome } from "./screens/Welcome";
+import { Timeline } from "./screens/Timeline";
 
 export default function App() {
   const audioRef = useRef<HTMLAudioElement>(null);
@@ -36,7 +37,7 @@ export default function App() {
           className="h-auto max-h-[12rem]"
         /> */}
           <h1
-            className="text-pink-600 text-3xl md:text-4xl font-bold mb-4 text-center"
+            className="text-pink-600 text-3xl md:text-4xl font-bold mb-4 text-center pl-4 pr-4"
             style={{ fontFamily: "'Dancing Script', cursive" }}
           >
             Olá, Maria Eduarda! Que bom ter você aqui.
@@ -62,11 +63,9 @@ export default function App() {
         {/* Terceira seção = Linha do tempo*/}
         {showThirdSection && (
           <section ref={thirdRef}>
-            <>TimeLine</>
+            <Timeline />
           </section>
         )}
-
-        <audio ref={audioRef} src="/Pixote - Insegurança.mp3" />
       </div>
     </div>
   );

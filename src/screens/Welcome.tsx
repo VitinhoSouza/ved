@@ -108,7 +108,7 @@ export function Welcome({ audioRef, onContinue }: WelcomeProps) {
           >
             <div className="bg-white p-2 shadow-lg border border-gray-300 rounded-sm">
               <img
-                src="/photo-down.png"
+                src="/timeline/role-aleatorio.JPG"
                 alt="Nós dois"
                 className="w-36 h-32 object-cover"
               />
