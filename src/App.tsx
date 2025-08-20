@@ -65,7 +65,7 @@ export default function App() {
           </section>
         )}
         <p className="m-20 text-white text-md font-bold text-center flex justify-center items-center">
-          Victor e Eduarda, uma linda história de amor...
+          🤍 Victor e Eduarda, uma linda história de amor... 🤍
         </p>
       </div>
     </div>

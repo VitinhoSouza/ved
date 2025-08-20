@@ -10,6 +10,9 @@ type WelcomeProps = {
 export function Welcome({ audioRef, onContinue }: WelcomeProps) {
   const [isPlaying, setIsPlaying] = useState(false);
 
+  const playlist = ["/Ferrugem-PirataETesouro.mp3", "/TDP-Camisa10.mp3"];
+  const [currentTrack, setCurrentTrack] = useState(0);
+
   const fullText = `  Hoje completam-se exatamente 5 anos desde que duas pessoas decidiram 
   se conhecer melhor e assumir um compromisso de namoro. Há pouco mais de um mês, deram 
   mais um passo importante: escolheram compartilhar o mesmo teto e construir, juntos, um lar. 
@@ -44,7 +47,7 @@ export function Welcome({ audioRef, onContinue }: WelcomeProps) {
     return () => clearTimeout(timer);
   }, []);
 
-  const toggleMusic = () => {
+  function toggleMusic() {
     if (!audioRef.current) return;
     if (isPlaying) {
       audioRef.current.pause();
@@ -52,11 +55,22 @@ export function Welcome({ audioRef, onContinue }: WelcomeProps) {
       audioRef.current.play();
     }
     setIsPlaying(!isPlaying);
-  };
+  }
+
+  function handleEnded() {
+    setCurrentTrack((prev) => (prev + 1) % playlist.length);
+    setTimeout(() => {
+      audioRef.current?.play().catch(() => {});
+    }, 200);
+  }
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen w-full p-4">
-      <audio ref={audioRef} src="/Ferrugem-PirataETesouro.mp3" loop />
+      <audio
+        ref={audioRef}
+        src={playlist[currentTrack]}
+        onEnded={handleEnded}
+      />
 
       {/* Iniciais com coração animado */}
       <motion.h1
@@ -66,7 +80,7 @@ export function Welcome({ audioRef, onContinue }: WelcomeProps) {
         className="text-5xl md:text-7xl font-bold text-pink-600 flex items-center gap-2"
         style={{ fontFamily: "'Dancing Script', cursive" }}
       >
-        V + D =
+        V + E =
         <motion.span
           animate={{
             scale: [1, 1.2, 1],
