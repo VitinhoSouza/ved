@@ -17,7 +17,7 @@ import primeiroNamorados from "../assets/timeline/primeiro-namorados.jpg";
 import primeiraViagem from "../assets/timeline/primeira-viagem.jpg";
 import primeiraViagem2 from "../assets/timeline/primeira-viagem-2.jpg";
 
-import umAno from "../assets/timeline/1-ano.jpg";
+import umAno from "../assets/timeline/1ano.jpg";
 import lucinete50 from "../assets/timeline/lucinete-50anos.jpg";
 import universalPark from "../assets/timeline/universal-park.jpg";
 import primeiroRevellion from "../assets/timeline/primeiro-revellion.jpg";
