@@ -35,7 +35,6 @@ export function Timeline() {
               {item.images.map((img, i) => (
                 <motion.img
                   key={i}
-                  loading="lazy"
                   src={img}
                   alt={`${item.title} - foto ${i + 1}`}
                   className={`object-cover rounded-2xl shadow-lg border-4 border-white ${

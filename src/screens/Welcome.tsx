@@ -2,6 +2,8 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
+import viagemCanoaQuadriciclo from "../assets/timeline/viagem-canoa-quadriciclo.jpg";
+
 type WelcomeProps = {
   audioRef: React.RefObject<HTMLAudioElement | null>;
   onContinue: () => void;
@@ -122,7 +124,7 @@ export function Welcome({ audioRef, onContinue }: WelcomeProps) {
           >
             <div className="bg-white p-3 shadow-xl border border-pink-200 rounded-xl">
               <img
-                src="/timeline/viagem-canoa-quadriciclo.jpg"
+                src={viagemCanoaQuadriciclo}
                 alt="Nós dois"
                 className="w-40 h-36 object-cover rounded-lg shadow-md"
               />
